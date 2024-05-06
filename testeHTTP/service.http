@@ -1,0 +1,32 @@
+### CADASTRA UM NOVO SERVIÇO NO BANCO DE DADOS APENAS FUNCIONARIO AUTORIZADO
+POST http://localhost:5000/api/service/register HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJhbXNJZCI6IjNkNDI1N2E0LTAxMjgtNDg1Zi1hYzc1LWIwNzZiZDhmM2FiMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNDI0ODIxNywiZXhwIjoxNzE0ODUzMDE3LCJzdWIiOiIzZDQyNTdhNC0wMTI4LTQ4NWYtYWM3NS1iMDc2YmQ4ZjNhYjAifQ.rk_b1TUmVPlRLQ3KjDDf7VHbpuXiEreV7q3Q7-GXHLQ
+
+{
+  "serviceName": "Corte de cableo masculino",
+  "serviceDescription": "corte de cabelo com pezinho na máquina",
+  "servicePrice":"295.90"  
+}
+
+
+### REMOVE UM SERVIÇO NO BANCO DE DADOS APENAS FUNCIONARIO AUTORIZADO
+DELETE  http://localhost:5000/api/service/e8fa4c1f-df8b-4acd-b6e8-8565e34010a1 HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJhbXNJZCI6IjNkNDI1N2E0LTAxMjgtNDg1Zi1hYzc1LWIwNzZiZDhmM2FiMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNDI0ODIxNywiZXhwIjoxNzE0ODUzMDE3LCJzdWIiOiIzZDQyNTdhNC0wMTI4LTQ4NWYtYWM3NS1iMDc2YmQ4ZjNhYjAifQ.rk_b1TUmVPlRLQ3KjDDf7VHbpuXiEreV7q3Q7-GXHLQ
+
+
+### ALTRAR UM SERVIÇO NO BANCO DE DADOS APENAS FUNCIONARIO AUTORIZADO
+PATCH  http://localhost:5000/api/service/update/4e959d39-9c1d-472f-b376-84e1bb298500 HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJhbXNJZCI6IjNkNDI1N2E0LTAxMjgtNDg1Zi1hYzc1LWIwNzZiZDhmM2FiMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNDI0ODIxNywiZXhwIjoxNzE0ODUzMDE3LCJzdWIiOiIzZDQyNTdhNC0wMTI4LTQ4NWYtYWM3NS1iMDc2YmQ4ZjNhYjAifQ.rk_b1TUmVPlRLQ3KjDDf7VHbpuXiEreV7q3Q7-GXHLQ
+
+{
+  "serviceName": "Corte de cableo masculino",
+  "serviceDescription": "corte de cabelo com pezinho na máquina",
+  "servicePrice":"33333.90"  
+}
+
+### RETORNA UMA LISTA COM TODOS OS SERVIÇOS
+GET  http://localhost:5000/api/service HTTP/1.1
+content-type: application/json

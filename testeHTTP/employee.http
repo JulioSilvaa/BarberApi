@@ -1,0 +1,43 @@
+# CADASTRA UM NOVO FUNCIONARIO NO BANCO DE DADOS
+POST http://localhost:5000/api/employee/register HTTP/1.1
+content-type: application/json
+
+{
+  "employeeName": "user tester",
+  "employeeRole": "user",
+  "employeeEmail":"user@teste.com",
+  "employeePassword": "123456" 
+}
+
+### AUTENTICAÇÃO DO FUNCIONÁRIO
+POST http://localhost:5000/api/employee/auth HTTP/1.1
+content-type: application/json
+
+{
+  "email":"fulano@testasdascd.com",
+  "password": "123456" 
+}
+
+### ATUALIZA UM NOVO FUNCIONARIO NO BANCO DE DADOS
+PATCH http://localhost:5000/api/employee/3d4257a4-0128-485f-ac75-b076bd8f3ab0 HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJhbXNJZCI6ImQ3ODEyNWE3LTE3MGMtNDBkZS04OGZmLTc2YjFhNWVkZjkzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE0MjQ0NTMxLCJleHAiOjE3MTQ4NDkzMzEsInN1YiI6ImQ3ODEyNWE3LTE3MGMtNDBkZS04OGZmLTc2YjFhNWVkZjkzMSJ9.Q2McTkuxLeYl8WxfvwtBWRQHoZOF8LGSPPKNIRc3_oA
+
+{
+  "employeeName": "Fulanoass1",
+  "employeeRole": "gerente",
+  "employeePassword": "123456" 
+}
+
+### BUSCA UM FUNCIONARIO POR ID NO PARAMETRO
+GET http://localhost:5000/api/employee/2c765a1b-9e6f-4264-a8d0-384fe5c58621 HTTP/1.1
+content-type: application/json
+
+### BUSCA UMA LISTA DE FUNCIONARIOS 
+GET http://localhost:5000/api/employee HTTP/1.1
+content-type: application/json
+
+### APAGA UM FUNCIONARIO DO BANCO DE DADOS PASSANDO O ID POR PARAMETRO
+DELETE http://localhost:5000/api/employee/3d4257a4-0128-485f-ac75-b076bd8f3ab0
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJhbXNJZCI6ImQ3ODEyNWE3LTE3MGMtNDBkZS04OGZmLTc2YjFhNWVkZjkzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE0MjQ0NTMxLCJleHAiOjE3MTQ4NDkzMzEsInN1YiI6ImQ3ODEyNWE3LTE3MGMtNDBkZS04OGZmLTc2YjFhNWVkZjkzMSJ9.Q2McTkuxLeYl8WxfvwtBWRQHoZOF8LGSPPKNIRc3_oA

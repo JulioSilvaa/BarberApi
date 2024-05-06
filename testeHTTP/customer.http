@@ -1,0 +1,46 @@
+### CADASTRA/REGISTRA UM NOVO CLIENTE NO BANCO DE DADOS
+POST http://localhost:5000/api/customer/register HTTP/1.1
+content-type: application/json
+
+{
+  "customerName": "Julio",
+  "customerEmail": "julio@teste",
+  "customerPassword": "123456",
+  "customerPhone": "342545sddf345342"
+}
+
+### REALIZA AUTENTICAÇÃO DO USUÀRIO CADASTRADO
+POST http://localhost:5000/api/customer/auth HTTP/1.1
+content-type: application/json
+
+{
+  "email": "julio@teste",
+  "password": "123456"
+}
+
+#### APAGA OS DADOS DE UM CLIENTE PASSANDO ID POR PARAMETRO
+DELETE http://localhost:5000/api/customer/44845dd1-b61e-43f3-88e8-419ab0e07c8e HTTP/1.1 
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoiZjIyOTYyODAtZDI0OC00YTI5LTg5YzctNGY5Y2VkZjliNTcxIiwiaWF0IjoxNzE0MDYzMDkyLCJleHAiOjE3MTQ2Njc4OTIsInN1YiI6ImYyMjk2MjgwLWQyNDgtNGEyOS04OWM3LTRmOWNlZGY5YjU3MSJ9.AqMMFRBS3Z8SrQx2hl_l38HjsngmM-wKpIhofxfN8Po
+
+### LISTA TODOS OS CLIENTES
+GET http://localhost:5000/api/customer/ HTTP/1.1 
+content-type: application/json
+
+### BUSCA UM CLIENTE PASSANDO ID POR QUERY NA URL
+GET http://localhost:5000/api/customer/search?id=5297b658-e9fd-4342-87dd-28486c9c60fb HTTP/1.1 
+content-type: application/json
+
+
+### ATUALIZA CADASTRO DO CLIENTE LOGADO
+PATCH http://localhost:5000/api/customer/44845dd1-b61e-43f3-88e8-419ab0e07c8e HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoiN2IzZDU2OTctNGZkYy00OTg0LWFjYzYtOWI2ZGIyMmVmMTM2IiwiaWF0IjoxNzEzOTc1NDg5LCJleHAiOjE3MTQ1ODAyODksInN1YiI6IjdiM2Q1Njk3LTRmZGMtNDk4NC1hY2M2LTliNmRiMjJlZjEzNiJ9.g06bVZcgdJm8FaSsVCISEoMWwvdWR7thM7j8ODz6q0M
+
+{
+  "customerName": "Fulano35",
+  "customerEmail": "fulano@teste235",
+  "customerPassword": "123456",
+  "customerPhone": "342545sddf345fd34"
+  
+}

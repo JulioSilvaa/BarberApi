@@ -1,0 +1,27 @@
+### CADASTRA/REGISTRA UM NOVO AGENDAMENTO NO BANCO DE DADOS
+# o customerId que é necessário está sendo capturado do token fo usuário autenticado.
+POST http://localhost:5000/api/appointments/register HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJhbXNJZCI6IjUyOTdiNjU4LWU5ZmQtNDM0Mi04N2RkLTI4NDg2YzljNjBmYiIsImlhdCI6MTcxNDI2NjI0OCwiZXhwIjoxNzE0ODcxMDQ4LCJzdWIiOiI1Mjk3YjY1OC1lOWZkLTQzNDItODdkZC0yODQ4NmM5YzYwZmIifQ.iP8D9SBDsKLKyxSfegNt94THAvpdLjaU-uXT_pUr3SQ
+
+{
+  "appointmentStatusId": "2",
+  "employeeId": "3d4257a4-0128-485f-ac75-b076bd8f3ab0",
+  "serviceId": "7870852e-2964-4caf-a334-8c697491f5ed",
+  "dateTime": "2024-04-30T10:00:00Z"
+}
+
+### EXCLUI UM AGENDAMENTO PASSANDO ID NO PARAMETRO - USUÁRIO LOGADO
+DELETE http://localhost:5000/api/appointments/5c9c9695-074d-4e6a-8fd3-19d9b96c9e21 HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJhbXNJZCI6IjUyOTdiNjU4LWU5ZmQtNDM0Mi04N2RkLTI4NDg2YzljNjBmYiIsImlhdCI6MTcxNDI2NjI0OCwiZXhwIjoxNzE0ODcxMDQ4LCJzdWIiOiI1Mjk3YjY1OC1lOWZkLTQzNDItODdkZC0yODQ4NmM5YzYwZmIifQ.iP8D9SBDsKLKyxSfegNt94THAvpdLjaU-uXT_pUr3SQ
+
+### RETORNA TODOS OS AGENDAMENTOS
+GET http://localhost:5000/api/appointments/ HTTP/1.1
+content-type: application/json
+
+
+### RETORNA TODOS OS AGENDAMENTOS DE UM USUÁRIO AUTENTICADO
+GET http://localhost:5000/api/appointments/5297b658-e9fd-4342-87dd-28486c9c60fb HTTP/1.1
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXJhbXNJZCI6IjUyOTdiNjU4LWU5ZmQtNDM0Mi04N2RkLTI4NDg2YzljNjBmYiIsImlhdCI6MTcxNDI2NjI0OCwiZXhwIjoxNzE0ODcxMDQ4LCJzdWIiOiI1Mjk3YjY1OC1lOWZkLTQzNDItODdkZC0yODQ4NmM5YzYwZmIifQ.iP8D9SBDsKLKyxSfegNt94THAvpdLjaU-uXT_pUr3SQ

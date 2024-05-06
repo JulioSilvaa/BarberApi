@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  customer_id String        @id @default(uuid())
+  name        String
+  phone       String
+  email       String        @unique
+  password    String
+  Appointment Appointment[]
+  createdAt   DateTime      @default(now())
+}
+
+model Employee {
+  employee_id String        @id @default(uuid())
+  name        String
+  password    String
+  email       String        @unique
+  role        String
+  Appointment Appointment[]
+}
+
+model Service {
+  service_id  String        @id @default(uuid())
+  name        String
+  description String
+  price       Decimal       @db.Decimal(10, 2)
+  Appointment Appointment[]
+}
+
+model AppointmentStatus {
+  appointment_status_id String        @id @default(uuid())
+  status_name           String        @unique
+  Appointment           Appointment[]
+}
+
+model Appointment {
+  appointment_id        String            @id @default(uuid())
+  customer              Customer          @relation(fields: [customer_id], references: [customer_id])
+  customer_id           String
+  employee              Employee          @relation(fields: [employee_id], references: [employee_id])
+  employee_id           String
+  service               Service           @relation(fields: [service_id], references: [service_id])
+  service_id            String
+  date_and_time         DateTime
+  appointment_status    AppointmentStatus @relation(fields: [appointment_status_id], references: [appointment_status_id])
+  appointment_status_id String
+}
