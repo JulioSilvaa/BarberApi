@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from "express";
+import "express-async-errors";
 import HTTPError from "src/errors/ErrorsHTTP";
 import Appointments_Router from "src/infra/router/Appointments_Router";
 import Customer_Router from "src/infra/router/Customer_Router";
@@ -7,8 +8,10 @@ import Service_Router from "src/infra/router/Service_Router";
 
 
 const app = express();
+import { config } from "dotenv";
 const port = process.env.PORT || 3000;
 
+config()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
